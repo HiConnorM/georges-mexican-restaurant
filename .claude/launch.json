@@ -6,6 +6,12 @@
       "runtimeExecutable": "python3",
       "runtimeArgs": ["-m", "http.server", "8321"],
       "port": 8321
+    },
+    {
+      "name": "next-app",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "start", "--prefix", "next-app"],
+      "port": 3311
     }
   ]
 }
