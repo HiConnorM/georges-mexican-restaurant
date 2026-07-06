@@ -28,15 +28,22 @@ const hamburgerStyles = `
 
 export const ORDER_ONLINE_URL = "https://www.restaurantlogin.com/api/fb/_q4xrw";
 
-const NAV_LINKS = [
-  { href: "/menu", label: "Menu", wrapper: "is-1" },
-  { href: "#About-us", label: "About", wrapper: "is-1" },
-  { href: "/gallery", label: "Events", wrapper: "is-1" },
-  { href: "/catering", label: "Catering", wrapper: "is-2" },
-  { href: "/reservations", label: "Reservations", wrapper: "is-3" },
-];
+interface NavbarProps {
+  /** Route of the page rendering this navbar ("/", "/menu", ...). Controls the
+   *  w--current highlight, mirroring the Webflow export. */
+  currentPath?: string;
+}
 
-export default function Navbar() {
+export default function Navbar({ currentPath = "/" }: NavbarProps) {
+  const isHome = currentPath === "/";
+  const links = [
+    { href: "/menu", label: "Menu", wrapper: "is-1" },
+    { href: isHome ? "#About-us" : "/#About-us", label: "About", wrapper: "is-1" },
+    { href: "/gallery", label: "Events", wrapper: "is-1" },
+    { href: "/catering", label: "Catering", wrapper: "is-2" },
+    { href: "/reservations", label: "Reservations", wrapper: "is-3" },
+  ];
+
   return (
     <div
       data-animation="default"
@@ -52,19 +59,30 @@ export default function Navbar() {
     >
       <div className="nav-container w-container">
         <div className="nav-menu-wrapper">
-          <a href="/" aria-current="page" className="brand w-nav-brand w--current">
+          <a
+            href="/"
+            aria-current={isHome ? "page" : undefined}
+            className={`brand w-nav-brand${isHome ? " w--current" : ""}`}
+          >
             <img src="/images/Untitled-design-3.svg" loading="lazy" alt="" className="image-logo" />
           </a>
           <div className="div-block-52">
             <nav role="navigation" className="navbar_menu w-nav-menu">
               <div className="navbar_menu-inner">
-                {NAV_LINKS.map((link) => (
-                  <div key={link.label} className={`nav_link-wrapper ${link.wrapper}`}>
-                    <a href={link.href} className="nav_link">
-                      {link.label}
-                    </a>
-                  </div>
-                ))}
+                {links.map((link) => {
+                  const isCurrent = link.href === currentPath;
+                  return (
+                    <div key={link.label} className={`nav_link-wrapper ${link.wrapper}`}>
+                      <a
+                        href={link.href}
+                        aria-current={isCurrent ? "page" : undefined}
+                        className={`nav_link${isCurrent ? " w--current" : ""}`}
+                      >
+                        {link.label}
+                      </a>
+                    </div>
+                  );
+                })}
                 <div className="navbar_menu-buttons is-4">
                   <a href={ORDER_ONLINE_URL} className="button is-secondary w-button">
                     Order Online
