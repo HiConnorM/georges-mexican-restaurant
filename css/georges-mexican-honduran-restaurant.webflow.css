@@ -9275,3 +9275,11 @@ blockquote {
   font-style: normal;
   font-display: swap;
 }
+
+/* Fix: the mobile breakpoint gives .navbar_menu z-index:-1, which stacks the
+   open hamburger menu UNDER the .w-nav-overlay backdrop - taps on nav links
+   hit the overlay and only close the menu. Restore stacking when the menu is
+   inside the overlay. */
+.w-nav-overlay .navbar_menu {
+  z-index: 1;
+}
