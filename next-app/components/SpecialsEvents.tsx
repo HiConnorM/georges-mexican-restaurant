@@ -1,10 +1,136 @@
+"use client";
+
+import { useState, type KeyboardEvent, type ReactNode } from "react";
+
 const INSTAGRAM_EVENTS_URL =
   "https://www.instagram.com/georgesmexicanrestaurant?fbclid=IwY2xjawQZn5JleHRuA2FlbQIxMABicmlkETFvNTVjSXpBTEszMWt3NnVZc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHrZKAW_lYiaFpQagfbZZf2GiDLPyry-7Zlm7dKOrrriYe03JuuOoXExNQBpg_aem_2EEDQO37Z2GWnsl_UiKrng";
 
-/** The "Why Choose George's" section: hover-to-reveal columns for weekly
- *  specials, events, and catering. Reveal behavior comes from the Webflow
- *  runtime via the data-w-id attributes. */
+interface Panel {
+  key: string;
+  label: string;
+  itemClass: string;
+  nameClass: string;
+  descClass: string;
+  content: ReactNode;
+}
+
+const PANELS: Panel[] = [
+  {
+    key: "specials",
+    label: "Specials",
+    itemClass: "benefit-item-first",
+    nameClass: "benefit-name-first",
+    descClass: "benefit-item-description first-description",
+    content: (
+      <p>
+        <strong>ALL DAY, EVERY DAY </strong>
+        <br />
+        2-for-1 Draft Beer
+        <br />
+        <br />
+        <strong>MONDAY </strong> <br />
+        - Happy Hour (2pm-5pm) <br />
+        <br />
+        <strong>TUESDAY</strong> <br />
+        - Unlimited $5.50 house margaritas after 5:00pm{" "}
+        <em>(with minimum purchase of $10.50)</em>
+        <br />
+        - Happy Hour (2pm-5pm) <br />
+        <br />
+        <strong>WEDNESDAY</strong>
+        <br /> -<em> </em>Kids eat FREE <br />
+        <em>(with purchase of adult entree) </em>
+        <br />
+        - 50% off bottled wine <br />
+        - 2 for 1 frozen flavored margaritas
+        <br />
+        - Happy Hour (2pm-5pm) <br />
+        <br />
+        <strong>THURSDAY</strong> <br />
+        - Happy Hour (2pm-5pm) <br />
+        <br />
+        <strong>FRIDAY</strong> <br />
+        - Happy Hour (2pm-5pm) <br />
+      </p>
+    ),
+  },
+  {
+    key: "events",
+    label: "Events",
+    itemClass: "benefit-item-second",
+    nameClass: "benefit-name-second",
+    descClass: "benefit-item-description second-description",
+    content: (
+      <p>
+        Follow us on <a href="https://www.facebook.com/georgesmexicanrestaurant/">Facebook</a> or{" "}
+        <a href={INSTAGRAM_EVENTS_URL}>Instagram</a> for the latest events, live music
+        announcements, and pop-ups <br /> <br /> <strong>MONDAY</strong>
+        <br />
+        - Chess Club (4pm)
+        <br />
+        <br />
+        <strong>TUESDAY</strong> <br />
+        - Live Music (6pm-9pm) <br />
+        <br />
+        <strong>FRIDAY</strong> <br />
+        - Live Music (6pm-9pm)
+        <br />
+        - Happy Hour (2pm-5pm) <br />
+        <br />
+        <strong>SATURDAY</strong>
+        <br />
+        - Live Music (6pm-9pm)
+        <br />
+      </p>
+    ),
+  },
+  {
+    key: "catering",
+    label: "Catering",
+    itemClass: "benefit-item-third",
+    nameClass: "benefit-s-name-third",
+    descClass: "benefit-item-description third-description",
+    content: (
+      <p>
+        Planning a party, office lunch, or family celebration?
+        <br />
+        <br />
+        George’s offers catering and private event options featuring our most popular dishes, fresh
+        margaritas, and crowd-favorite appetizers.
+        <br />
+        <br />
+        From small gatherings to larger celebrations, our team will help you create a delicious and
+        memorable experience for your guests. <br />
+        <br />
+        Explore our catering menu or <a href="tel:+19856264342">contact us</a> to start planning
+        your event.
+      </p>
+    ),
+  },
+];
+
+/**
+ * "Why Choose George's" — three reveal panels (specials / events / catering).
+ *
+ * The Webflow export drove these with IX2 hover interactions that left one
+ * panel stuck open. We detach from IX2 here (no per-item data-w-id) and drive
+ * the reveal ourselves: CSS handles hover on hover-capable devices, and this
+ * component toggles `.is-open` for tap/keyboard. Single-open behaves like an
+ * accordion so mobile doesn't turn into one long scroll. The section wrapper
+ * and heading keep their data-w-id so the scroll-in fade still plays.
+ */
 export default function SpecialsEvents() {
+  const [openKey, setOpenKey] = useState<string | null>(null);
+
+  const toggle = (key: string) => setOpenKey((cur) => (cur === key ? null : key));
+
+  const onKey = (e: KeyboardEvent, key: string) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      toggle(key);
+    }
+  };
+
   return (
     <section id="Why-La-Mansa" className="section without-bottom-spacing">
       <div className="w-layout-blockcontainer base-container w-container">
@@ -13,106 +139,36 @@ export default function SpecialsEvents() {
             Why Choose George&#39;s mexican restaurant?
           </h6>
           <div className="benefits-items">
-            <div data-w-id="18e54b9c-05ca-a197-e30e-5d5da9c63ddc" className="benefit-item-first">
-              <div data-w-id="fbaac203-6b01-98af-c147-a83bc880e366" className="benefit-name-first">
-                Specials
-              </div>
-              <div
-                data-w-id="619003ed-0d4d-07ca-85e8-cf90d0f3ae3f"
-                className="benefit-item-description first-description"
-              >
-                <p>
-                  <strong>ALL DAY, EVERY DAY </strong>
-                  <br />
-                  2-for-1 Draft Beer
-                  <br />
-                  <br />
-                  <strong>MONDAY </strong> <br />
-                  - Happy Hour (2pm-5pm) <br />
-                  <br />
-                  <strong>TUESDAY</strong> <br />
-                  - Unlimited $5.50 house margaritas after 5:00pm{" "}
-                  <em>(with minimum purchase of $10.50)</em>
-                  <br />
-                  - Happy Hour (2pm-5pm) <br />
-                  <br />
-                  <strong>WEDNESDAY</strong>
-                  <br /> -<em> </em>Kids eat FREE <br />
-                  <em>(with purchase of adult entree) </em>
-                  <br />
-                  - 50% off bottled wine <br />
-                  - 2 for 1 frozen flavored margaritas
-                  <br />
-                  - Happy Hour (2pm-5pm) <br />
-                  <br />
-                  <strong>THURSDAY</strong> <br />
-                  - Happy Hour (2pm-5pm) <br />
-                  <br />
-                  <strong>FRIDAY</strong> <br />
-                  - Happy Hour (2pm-5pm) <br />
-                </p>
-              </div>
-            </div>
-            <div data-w-id="99b6f7de-38be-fac3-afc9-aeccb5dfcf1c" className="benefit-item-second">
-              <div data-w-id="61134700-75a6-c877-3f83-4cf3e7b36271" className="benefit-name-second">
-                Events
-              </div>
-              <div
-                data-w-id="4ec5fbcd-a76e-e215-1d33-5f7f7facab76"
-                className="benefit-item-description second-description"
-              >
-                <p>
-                  Follow us on{" "}
-                  <a href="https://www.facebook.com/georgesmexicanrestaurant/">Facebook</a> or{" "}
-                  <a href={INSTAGRAM_EVENTS_URL}>Instagram</a> for the latest events, live music
-                  announcements, and pop-ups <br /> <br /> <strong>MONDAY</strong>
-                  <br />
-                  - Chess Club (4pm)
-                  <br />
-                  <br />
-                  <strong>TUESDAY</strong> <br />
-                  - Live Music (6pm-9pm) <br />
-                  <br />
-                  <strong>FRIDAY</strong> <br />
-                  - Live Music (6pm-9pm)
-                  <br />
-                  - Happy Hour (2pm-5pm) <br />
-                  <br />
-                  <strong>SATURDAY</strong>
-                  <br />
-                  - Live Music (6pm-9pm)
-                  <br />
-                </p>
-              </div>
-            </div>
-            <div data-w-id="f1e2858a-4468-28e1-cb4a-18d305075bd1" className="benefit-item-third">
-              <a
-                data-w-id="59ecf86b-43b0-099e-e64b-c3b2c7ff53e8"
-                href="#"
-                className="benefit-s-name-third"
-              >
-                Catering
-              </a>
-              <div
-                data-w-id="c2e3971d-3986-c39f-6e8d-f377f5b39c55"
-                className="benefit-item-description third-description"
-              >
-                <p>
-                  Planning a party, office lunch, or family celebration?
-                  <br />
-                  <br />
-                  George’s offers catering and private event options featuring our most popular
-                  dishes, fresh margaritas, and crowd-favorite appetizers.
-                  <br />
-                  <br />
-                  From small gatherings to larger celebrations, our team will help you create a
-                  delicious and memorable experience for your guests. <br />
-                  <br />
-                  Explore our catering menu or <a href="tel:+19856264342">contact us</a> to start
-                  planning your event.
-                </p>
-              </div>
-            </div>
+            {PANELS.map((panel) => {
+              const isOpen = openKey === panel.key;
+              const descId = `benefit-desc-${panel.key}`;
+              return (
+                <div
+                  key={panel.key}
+                  className={`${panel.itemClass}${isOpen ? " is-open" : ""}`}
+                >
+                  <div
+                    className={panel.nameClass}
+                    role="button"
+                    tabIndex={0}
+                    aria-expanded={isOpen}
+                    aria-controls={descId}
+                    onClick={() => toggle(panel.key)}
+                    onKeyDown={(e) => onKey(e, panel.key)}
+                  >
+                    {panel.label}
+                  </div>
+                  <div className="benefit-toggle-hint" aria-hidden="true">
+                    ⌄
+                  </div>
+                  <div id={descId} className={panel.descClass}>
+                    {/* Inner wrapper: the grid-row collapse animates to the
+                        exact content height, so it must clip its overflow. */}
+                    <div className="benefit-desc-inner">{panel.content}</div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

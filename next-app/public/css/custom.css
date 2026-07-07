@@ -1,0 +1,196 @@
+/* ==========================================================================
+   George's — custom overrides layered on top of the exported Webflow CSS.
+   Loaded after the Webflow stylesheets so these rules win without touching
+   the vendored files. Two concerns live here:
+     1. GloriaFood ordering/reservation button styling (the widget injects its
+        own orange/blue Arial buttons that clash with the site palette).
+     2. The "Why Choose George's" benefits accordion.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. GloriaFood buttons
+   The widget (ewm2.js) renders <span class="glf-button"> and styles it via an
+   injected stylesheet. We override with matching specificity + !important so
+   the buttons read as George's primary/secondary buttons instead of the
+   default GloriaFood theme. .reservation is the second (outlined) variant.
+   -------------------------------------------------------------------------- */
+
+/* Drop the white rounded box the export wrapped the hero buttons in. */
+.banner-button-wrapper .code-embed {
+  background-color: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.glf-button {
+  background-color: var(--stroke) !important; /* #608650 site green */
+  color: var(--white) !important;
+  font-family: Almarai, sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.4px !important;
+  border: 1.5px solid var(--primary) !important;
+  border-radius: 10px !important;
+  padding: 13px 26px !important;
+  box-shadow: none !important;
+  text-transform: none !important;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.15s ease !important;
+  cursor: pointer;
+}
+
+.glf-button:hover {
+  background-color: var(--background-light) !important; /* cream */
+  color: var(--primary) !important;
+}
+
+.glf-button:active {
+  transform: translateY(1px);
+}
+
+/* Secondary (Table Reservation): outlined ghost button that fills on hover. */
+.glf-button.reservation {
+  background-color: transparent !important;
+  color: var(--white) !important;
+  border-color: var(--white) !important;
+}
+
+.glf-button.reservation:hover {
+  background-color: var(--white) !important;
+  color: var(--primary) !important;
+  border-color: var(--white) !important;
+}
+
+/* On the reservations page the ghost button sits on a light background, so it
+   needs the green outline/text instead of white. */
+.reservation-section-wrapper .glf-button.reservation,
+.form-reservation-wrapper .glf-button.reservation {
+  color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+.reservation-section-wrapper .glf-button.reservation:hover,
+.form-reservation-wrapper .glf-button.reservation:hover {
+  background-color: var(--primary) !important;
+  color: var(--white) !important;
+  border-color: var(--primary) !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. "Why Choose George's" benefits accordion
+   The exported page drives these with Webflow IX2 hover interactions that
+   behaved inconsistently (one panel stuck open). We detach the items from IX2
+   (data-w-id removed in the component) and drive the reveal here: hover on
+   hover-capable devices, tap-to-toggle (.is-open) everywhere.
+   -------------------------------------------------------------------------- */
+
+/* Collapse/expand via grid-template-rows 0fr -> 1fr. This animates to the
+   panel's *exact* content height at any breakpoint (no magic max-height that
+   could clip the taller mobile layout). Padding and margin animate alongside
+   so a closed panel occupies zero space. The inner wrapper clips overflow. */
+.benefits-items .benefit-item-description {
+  display: grid;
+  grid-template-rows: 0fr;
+  height: auto; /* neutralise .second-description { height: 100% } */
+  opacity: 0;
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  pointer-events: none;
+  transition: grid-template-rows 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.35s ease, margin-top 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    padding-top 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    padding-bottom 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.benefits-items .benefit-desc-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* Revealed state (shared by hover and tap). */
+.benefits-items .benefit-item-first.is-open .benefit-item-description,
+.benefits-items .benefit-item-second.is-open .benefit-item-description,
+.benefits-items .benefit-item-third.is-open .benefit-item-description {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  margin-top: -35px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  pointer-events: auto;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .benefits-items .benefit-item-first:hover .benefit-item-description,
+  .benefits-items .benefit-item-second:hover .benefit-item-description,
+  .benefits-items .benefit-item-third:hover .benefit-item-description {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    margin-top: -35px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    pointer-events: auto;
+  }
+}
+
+/* The circular triggers are interactive: pointer cursor + active-look parity
+   with the existing :hover rule so tapped-open panels keep the green circle. */
+.benefits-items .benefit-name-first,
+.benefits-items .benefit-name-second,
+.benefits-items .benefit-s-name-third {
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.benefits-items .benefit-item-first.is-open .benefit-name-first,
+.benefits-items .benefit-item-second.is-open .benefit-name-second,
+.benefits-items .benefit-item-third.is-open .benefit-s-name-third {
+  z-index: 2;
+  background-color: var(--primary);
+  color: var(--background-light);
+}
+
+/* Tap affordance: a small chevron under each circle, shown only where there's
+   no hover (touch). Rotates when the panel is open. */
+.benefits-items .benefit-toggle-hint {
+  display: none;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  color: var(--primary);
+  font-size: 22px;
+  line-height: 1;
+  transition: transform 0.4s ease;
+  pointer-events: none;
+}
+
+@media (hover: none) {
+  .benefits-items .benefit-toggle-hint {
+    display: block;
+  }
+  .benefits-items .is-open .benefit-toggle-hint {
+    transform: rotate(180deg);
+  }
+}
+
+/* On desktop the third column's "Catering" trigger is an <a>; keep it looking
+   like the other circles (no underline, inherit color transitions). */
+.benefits-items a.benefit-s-name-third {
+  text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------
+   3. Mobile nav hit-testing fix
+   The exported CSS gives .navbar_menu z-index:-1 at the mobile breakpoint.
+   When Webflow opens the hamburger menu it moves that nav into the
+   .w-nav-overlay backdrop — where z-index:-1 stacks the whole menu BEHIND the
+   backdrop, so taps on the links actually hit the overlay and just close the
+   menu. Restore stacking while the menu lives inside the overlay.
+   -------------------------------------------------------------------------- */
+.w-nav-overlay .navbar_menu {
+  z-index: 1;
+}

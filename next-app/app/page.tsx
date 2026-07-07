@@ -13,43 +13,31 @@ import Footer from "../components/Footer";
 
 // Initial-state rules for the Webflow interactions on this page, copied from
 // the exported index.html <head>. They hide/transform elements until the
-// Webflow runtime plays its load/scroll animations.
+// Webflow runtime plays its load/scroll animations. The per-item rules for the
+// "Why Choose" panels were removed — those panels are now a self-contained
+// accordion (see SpecialsEvents.tsx); only the section wrapper's scroll-in
+// fade remains.
 const interactionStyles = `
-@media (min-width:992px) {
-  html.w-mod-js:not(.w-mod-ix) [data-w-id="c2e3971d-3986-c39f-6e8d-f377f5b39c55"] {display:none;-webkit-transform:translate3d(0,20px,0) scale3d(0.8,0.8,1) rotateX(0) rotateY(0) rotateZ(0) skew(0,0);-moz-transform:translate3d(0,20px,0) scale3d(0.8,0.8,1) rotateX(0) rotateY(0) rotateZ(0) skew(0,0);-ms-transform:translate3d(0,20px,0) scale3d(0.8,0.8,1) rotateX(0) rotateY(0) rotateZ(0) skew(0,0);transform:translate3d(0,20px,0) scale3d(0.8,0.8,1) rotateX(0) rotateY(0) rotateZ(0) skew(0,0);opacity:0}
-  html.w-mod-js:not(.w-mod-ix) [data-w-id="619003ed-0d4d-07ca-85e8-cf90d0f3ae3f"] {-webkit-transform:translate3d(0,20px,0) scale3d(0.8,0.8,1) rotateX(0) rotateY(0) rotateZ(0) skew(0,0);-moz-transform:translate3d(0,20px,0) scale3d(0.8,0.8,1) rotateX(0) rotateY(0) rotateZ(0) skew(0,0);-ms-transform:translate3d(0,20px,0) scale3d(0.8,0.8,1) rotateX(0) rotateY(0) rotateZ(0) skew(0,0);transform:translate3d(0,20px,0) scale3d(0.8,0.8,1) rotateX(0) rotateY(0) rotateZ(0) skew(0,0);opacity:0;display:none}
-  html.w-mod-js:not(.w-mod-ix) [data-w-id="4ec5fbcd-a76e-e215-1d33-5f7f7facab76"] {opacity:1;-webkit-transform:translate3d(0,0px,0) scale3d(1,1,1) rotateX(0) rotateY(0) rotateZ(0) skew(0,0);-moz-transform:translate3d(0,0px,0) scale3d(1,1,1) rotateX(0) rotateY(0) rotateZ(0) skew(0,0);-ms-transform:translate3d(0,0px,0) scale3d(1,1,1) rotateX(0) rotateY(0) rotateZ(0) skew(0,0);transform:translate3d(0,0px,0) scale3d(1,1,1) rotateX(0) rotateY(0) rotateZ(0) skew(0,0)}
-  html.w-mod-js:not(.w-mod-ix) [data-w-id="61134700-75a6-c877-3f83-4cf3e7b36271"] {color:rgb(255,250,244);background-color:rgb(26,56,60)}
+@media (min-width:768px) {
   html.w-mod-js:not(.w-mod-ix) [data-w-id="e31dfb9c-90df-bde6-663e-4a88a33aa39b"] {opacity:0}
-}
-@media (max-width:991px) and (min-width:768px) {
-  html.w-mod-js:not(.w-mod-ix) [data-w-id="c2e3971d-3986-c39f-6e8d-f377f5b39c55"] {display:none;-webkit-transform:translate3d(0,20px,0) scale3d(0.8,0.8,1) rotateX(0) rotateY(0) rotateZ(0) skew(0,0);-moz-transform:translate3d(0,20px,0) scale3d(0.8,0.8,1) rotateX(0) rotateY(0) rotateZ(0) skew(0,0);-ms-transform:translate3d(0,20px,0) scale3d(0.8,0.8,1) rotateX(0) rotateY(0) rotateZ(0) skew(0,0);transform:translate3d(0,20px,0) scale3d(0.8,0.8,1) rotateX(0) rotateY(0) rotateZ(0) skew(0,0);opacity:0}
-  html.w-mod-js:not(.w-mod-ix) [data-w-id="619003ed-0d4d-07ca-85e8-cf90d0f3ae3f"] {-webkit-transform:translate3d(0,20px,0) scale3d(0.8,0.8,1) rotateX(0) rotateY(0) rotateZ(0) skew(0,0);-moz-transform:translate3d(0,20px,0) scale3d(0.8,0.8,1) rotateX(0) rotateY(0) rotateZ(0) skew(0,0);-ms-transform:translate3d(0,20px,0) scale3d(0.8,0.8,1) rotateX(0) rotateY(0) rotateZ(0) skew(0,0);transform:translate3d(0,20px,0) scale3d(0.8,0.8,1) rotateX(0) rotateY(0) rotateZ(0) skew(0,0);opacity:0;display:none}
-  html.w-mod-js:not(.w-mod-ix) [data-w-id="4ec5fbcd-a76e-e215-1d33-5f7f7facab76"] {opacity:1;-webkit-transform:translate3d(0,0px,0) scale3d(1,1,1) rotateX(0) rotateY(0) rotateZ(0) skew(0,0);-moz-transform:translate3d(0,0px,0) scale3d(1,1,1) rotateX(0) rotateY(0) rotateZ(0) skew(0,0);-ms-transform:translate3d(0,0px,0) scale3d(1,1,1) rotateX(0) rotateY(0) rotateZ(0) skew(0,0);transform:translate3d(0,0px,0) scale3d(1,1,1) rotateX(0) rotateY(0) rotateZ(0) skew(0,0)}
-  html.w-mod-js:not(.w-mod-ix) [data-w-id="61134700-75a6-c877-3f83-4cf3e7b36271"] {color:rgb(255,250,244);background-color:rgb(26,56,60)}
-  html.w-mod-js:not(.w-mod-ix) [data-w-id="e31dfb9c-90df-bde6-663e-4a88a33aa39b"] {opacity:0}
-}
-@media (max-width:767px) and (min-width:480px) {
-  html.w-mod-js:not(.w-mod-ix) [data-w-id="18e54b9c-05ca-a197-e30e-5d5da9c63ddc"] {opacity:0}
-  html.w-mod-js:not(.w-mod-ix) [data-w-id="99b6f7de-38be-fac3-afc9-aeccb5dfcf1c"] {opacity:0}
-  html.w-mod-js:not(.w-mod-ix) [data-w-id="f1e2858a-4468-28e1-cb4a-18d305075bd1"] {opacity:0}
-}
-@media (max-width:479px) {
-  html.w-mod-js:not(.w-mod-ix) [data-w-id="18e54b9c-05ca-a197-e30e-5d5da9c63ddc"] {opacity:0}
-  html.w-mod-js:not(.w-mod-ix) [data-w-id="99b6f7de-38be-fac3-afc9-aeccb5dfcf1c"] {opacity:0}
-  html.w-mod-js:not(.w-mod-ix) [data-w-id="f1e2858a-4468-28e1-cb4a-18d305075bd1"] {opacity:0}
 }
 `;
 
 const restaurantSchema = {
   "@context": "https://schema.org",
   "@type": "Restaurant",
+  "@id": "https://georgesmexicanrestaurant.com/#restaurant",
   name: "George's Mexican Restaurant",
+  alternateName: "George's Mexican & Honduran Restaurant",
+  description:
+    "Family-owned restaurant serving authentic Mexican and Honduran cuisine in Mandeville, Louisiana for over 40 years. Fresh tacos, fajitas, margaritas, weekly specials, live music, catering, and online ordering for pickup.",
   url: "https://georgesmexicanrestaurant.com/",
   image: "https://georgesmexicanrestaurant.com/images/OSWALD.webp",
-  servesCuisine: ["Mexican", "Honduran"],
+  logo: "https://georgesmexicanrestaurant.com/images/Untitled-design-3.svg",
+  servesCuisine: ["Mexican", "Honduran", "Tex-Mex"],
   telephone: "+19856264342",
   priceRange: "$$",
+  currenciesAccepted: "USD",
   address: {
     "@type": "PostalAddress",
     streetAddress: "1461 N. Causeway Blvd",
@@ -58,6 +46,7 @@ const restaurantSchema = {
     postalCode: "70471",
     addressCountry: "US",
   },
+  areaServed: ["Mandeville LA", "Covington LA", "Northshore", "St. Tammany Parish"],
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
@@ -70,6 +59,26 @@ const restaurantSchema = {
       dayOfWeek: ["Friday", "Saturday"],
       opens: "11:00",
       closes: "22:00",
+    },
+  ],
+  hasMenu: "https://georgesmexicanrestaurant.com/menu",
+  acceptsReservations: "https://georgesmexicanrestaurant.com/reservations",
+  // Mirrors the rating shown in the on-page reviews slider.
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5.0",
+    reviewCount: "1230",
+  },
+  potentialAction: [
+    {
+      "@type": "OrderAction",
+      target: "https://www.restaurantlogin.com/api/fb/_q4xrw",
+      deliveryMethod: "http://purl.org/goodrelations/v1#DeliveryModePickUp",
+    },
+    {
+      "@type": "ReserveAction",
+      target: "https://georgesmexicanrestaurant.com/reservations",
+      result: { "@type": "FoodEstablishmentReservation", name: "Table reservation" },
     },
   ],
   sameAs: [

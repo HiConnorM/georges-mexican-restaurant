@@ -1,0 +1,39 @@
+# George's Mexican Restaurant
+
+> Family-owned restaurant serving authentic Mexican and Honduran cuisine in Mandeville, Louisiana for over 40 years. Known for fresh tacos, fajitas, margaritas, weekly specials, live music, and catering on the Northshore.
+
+## Key facts
+
+- Address: 1461 N. Causeway Blvd, Mandeville, LA 70471, United States
+- Phone: (985) 626-4342
+- Cuisine: Mexican, Honduran, Tex-Mex
+- Hours: Sunday–Thursday 11:00 AM–9:00 PM; Friday–Saturday 11:00 AM–10:00 PM
+- Price range: $$ (casual, family-friendly)
+- Online ordering (pickup): https://www.restaurantlogin.com/api/fb/_q4xrw
+- Table reservations: https://georgesmexicanrestaurant.com/reservations
+- Owner: Egla Guevara
+
+## Weekly specials
+
+- All day, every day: 2-for-1 draft beer
+- Monday–Friday: Happy hour 2 PM–5 PM
+- Tuesday: unlimited $5.50 house margaritas after 5 PM (with minimum $10.50 purchase)
+- Wednesday: kids eat free (with adult entree), 50% off bottled wine, 2-for-1 frozen flavored margaritas
+
+## Events
+
+- Monday: Chess Club at 4 PM
+- Tuesday, Friday, Saturday: live music 6 PM–9 PM
+
+## Pages
+
+- [Menu](https://georgesmexicanrestaurant.com/menu): full menu — antojitos, salads & bowls, carnes, Texas style, seafood, enchiladas, desserts, a la carte, cantina
+- [Catering](https://georgesmexicanrestaurant.com/catering): catering menu for parties, office lunches, and celebrations
+- [Reservations](https://georgesmexicanrestaurant.com/reservations): book a table
+- [Specials & Events](https://georgesmexicanrestaurant.com/gallery): weekly specials, live music, and community events
+- [About Us](https://georgesmexicanrestaurant.com/about-us): family story and restaurant history
+
+## Social
+
+- Facebook: https://www.facebook.com/georgesmexicanrestaurant/
+- Instagram: https://www.instagram.com/georgesmexicanrestaurant

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "../../components/Navbar";
 import WfPageId from "../../components/WfPageId";
+import BreadcrumbSchema from "../../components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Reservations | George's Mexican Restaurant | Mandeville, LA",
@@ -10,6 +11,9 @@ export const metadata: Metadata = {
     title: "Reservations | George's Mexican Restaurant | Mandeville, LA",
     description: "Reserve a table at George&#x27;s Mexican Restaurant in Mandeville, LA. Authentic Mexican and Honduran cuisine, margaritas, live music, and weekly specials.",
     type: "website",
+    url: "https://georgesmexicanrestaurant.com/reservations",
+    siteName: "George's Mexican Restaurant",
+    locale: "en_US",
     images: ["https://georgesmexicanrestaurant.com/images/OSWALD.webp"],
   },
   twitter: {
@@ -23,6 +27,7 @@ export default function Page() {
   return (
     <>
       <WfPageId id="68806e809578707174464576" />
+      <BreadcrumbSchema name="Reservations" path="/reservations" />
       <Navbar currentPath="/reservations" />
         <div id="Hero-section" className="section blog-grid-banner-copy">
           <div className="base-container w-container">
