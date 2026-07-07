@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "About Us | George's Mexican Restaurant | Mandeville, LA",
     description: "Family-owned for over 40 years, George&#x27;s Mexican Restaurant serves authentic Mexican and Honduran cuisine in the heart of Mandeville, Louisiana.",
     type: "website",
-    images: ["https://georgesmexicanrestaurant.com/images/OSWALD.png"],
+    images: ["https://georgesmexicanrestaurant.com/images/OSWALD.webp"],
   },
   twitter: {
     card: "summary_large_image",

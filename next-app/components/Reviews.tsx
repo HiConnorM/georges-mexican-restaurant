@@ -14,8 +14,8 @@ const REVIEWS: Review[] = [
     author: "– Riley B.",
     ratingClass: "text-primary",
     image: {
-      src: "/images/11th.png",
-      srcSet: "/images/11th-p-500.png 500w, /images/11th-p-800.png 800w, /images/11th.png 1080w",
+      src: "/images/11th.webp",
+      srcSet: "/images/11th-p-500.webp 500w, /images/11th-p-800.webp 800w, /images/11th.webp 1080w",
       sizes: "(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px",
     },
   },
@@ -26,9 +26,9 @@ const REVIEWS: Review[] = [
     author: "– Sarah L.",
     ratingClass: "text-span-3",
     image: {
-      src: "/images/3.png",
+      src: "/images/3.webp",
       srcSet:
-        "/images/3-p-500.png 500w, /images/3-p-800.png 800w, /images/3-p-1080.png 1080w, /images/3.png 1440w",
+        "/images/3-p-500.png 500w, /images/3-p-800.webp 800w, /images/3-p-1080.webp 1080w, /images/3.webp 1440w",
       sizes: "(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px",
     },
   },
@@ -39,8 +39,8 @@ const REVIEWS: Review[] = [
     author: "– Jess D.",
     ratingClass: "text-span-3",
     image: {
-      src: "/images/58.png",
-      srcSet: "/images/58-p-500.png 500w, /images/58-p-800.png 800w, /images/58.png 1080w",
+      src: "/images/58.webp",
+      srcSet: "/images/58-p-500.png 500w, /images/58-p-800.webp 800w, /images/58.webp 1080w",
       sizes: "(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px",
     },
   },

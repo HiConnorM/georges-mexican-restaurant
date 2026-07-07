@@ -152,11 +152,11 @@ export default function ReservationCta() {
             className="w-layout-blockcontainer div-block-100 w-container"
           >
             <img
-              src="/images/55.png"
+              src="/images/55.webp"
               loading="lazy"
               width={572}
               alt=""
-              srcSet="/images/55-p-500.png 500w, /images/55-p-800.png 800w, /images/55.png 1080w"
+              srcSet="/images/55-p-500.webp 500w, /images/55-p-800.webp 800w, /images/55.webp 1080w"
               sizes="(max-width: 767px) 100vw, 572px"
               className="image-52"
             />

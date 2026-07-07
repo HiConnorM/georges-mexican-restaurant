@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description:
       "Authentic Mexican cuisine in Mandeville, Louisiana for over 40 years. Fresh tacos, margaritas, live music, weekly specials, events, and catering.",
     type: "website",
-    images: ["https://georgesmexicanrestaurant.com/images/OSWALD.png"],
+    images: ["https://georgesmexicanrestaurant.com/images/OSWALD.webp"],
   },
   twitter: {
     card: "summary_large_image",
@@ -50,6 +50,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="stylesheet" href="/css/georges-mexican-honduran-restaurant.webflow.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Third-party origins used on every page: jQuery CDN, Webflow asset
+            CDN (GSAP), GloriaFood widget, Vimeo background video. */}
+        <link rel="preconnect" href="https://d3e54v103j8qbb.cloudfront.net" />
+        <link rel="preconnect" href="https://cdn.prod.website-files.com" />
+        <link rel="preconnect" href="https://www.fbgcdn.com" />
+        <link rel="preconnect" href="https://player.vimeo.com" />
         {/* Same families/variants the Webflow export requests through webfont.js,
             loaded as a plain stylesheet so server rendering stays deterministic. */}
         <link

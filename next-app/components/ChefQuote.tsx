@@ -47,10 +47,10 @@ export default function ChefQuote() {
             className="chef-image-wrapper"
           >
             <img
-              src="/images/June-2025.png"
+              src="/images/June-2025.webp"
               loading="lazy"
               sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px"
-              srcSet="/images/June-2025-p-500.png 500w, /images/June-2025-p-800.png 800w, /images/June-2025.png 1080w"
+              srcSet="/images/June-2025-p-500.webp 500w, /images/June-2025-p-800.webp 800w, /images/June-2025.webp 1080w"
               alt=""
               className="image-chef"
             />

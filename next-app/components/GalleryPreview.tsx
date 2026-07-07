@@ -15,43 +15,43 @@ interface GallerySlide {
 const SLIDES: GallerySlide[] = [
   {
     linkClass: "lightbox-link-slide-1",
-    src: "/images/OSWALD.png",
+    src: "/images/OSWALD.webp",
     srcSet:
-      "/images/OSWALD-p-500.png 500w, /images/OSWALD-p-800.png 800w, /images/OSWALD-p-1080.png 1080w, /images/OSWALD.png 1366w",
+      "/images/OSWALD-p-500.png 500w, /images/OSWALD-p-800.webp 800w, /images/OSWALD-p-1080.webp 1080w, /images/OSWALD.webp 1366w",
     sizes: "100vw",
-    lightbox: { _id: "672ca1fd3227aecb6d6740bb", fileName: "OSWALD.png", fileSize: 2430305, width: 1366, height: 768 },
+    lightbox: { _id: "672ca1fd3227aecb6d6740bb", fileName: "OSWALD.webp", fileSize: 2430305, width: 1366, height: 768 },
   },
   {
     linkClass: "lightbox-link-slide-2",
-    src: "/images/OSWALD-1.png",
+    src: "/images/OSWALD-1.webp",
     srcSet:
-      "/images/OSWALD-1-p-500.png 500w, /images/OSWALD-1-p-800.png 800w, /images/OSWALD-1-p-1080.png 1080w, /images/OSWALD-1.png 1366w",
+      "/images/OSWALD-1-p-500.png 500w, /images/OSWALD-1-p-800.webp 800w, /images/OSWALD-1-p-1080.webp 1080w, /images/OSWALD-1.webp 1366w",
     sizes: "100vw",
-    lightbox: { _id: "672ca1fe14f7d1012d656e10", fileName: "OSWALD-1.png", fileSize: 2188221, width: 1366, height: 768 },
+    lightbox: { _id: "672ca1fe14f7d1012d656e10", fileName: "OSWALD-1.webp", fileSize: 2188221, width: 1366, height: 768 },
   },
   {
     linkClass: "lightbox-link-slide-3",
-    src: "/images/Georges-Website-7.png",
+    src: "/images/Georges-Website-7.webp",
     srcSet:
-      "/images/Georges-Website-7-p-500.png 500w, /images/Georges-Website-7-p-800.png 800w, /images/Georges-Website-7-p-1080.png 1080w, /images/Georges-Website-7-p-1600.png 1600w, /images/Georges-Website-7.png 1821w",
+      "/images/Georges-Website-7-p-500.png 500w, /images/Georges-Website-7-p-800.webp 800w, /images/Georges-Website-7-p-1080.webp 1080w, /images/Georges-Website-7-p-1600.webp 1600w, /images/Georges-Website-7.webp 1821w",
     sizes: "100vw",
-    lightbox: { _id: "672ca1fff52419d567949b7e", fileName: "Georges-Website-7.png", fileSize: 3389842, width: 1821, height: 960 },
+    lightbox: { _id: "672ca1fff52419d567949b7e", fileName: "Georges-Website-7.webp", fileSize: 3389842, width: 1821, height: 960 },
   },
   {
     linkClass: "lightbox-link-slide-4",
-    src: "/images/3.png",
+    src: "/images/3.webp",
     srcSet:
-      "/images/3-p-500.png 500w, /images/3-p-800.png 800w, /images/3-p-1080.png 1080w, /images/3.png 1440w",
+      "/images/3-p-500.png 500w, /images/3-p-800.webp 800w, /images/3-p-1080.webp 1080w, /images/3.webp 1440w",
     sizes: "(max-width: 1439px) 100vw, 1440px",
-    lightbox: { _id: "672ca1fd8899ecbc4bd74dce", fileName: "3.png", fileSize: 2391068, width: 1440, height: 810 },
+    lightbox: { _id: "672ca1fd8899ecbc4bd74dce", fileName: "3.webp", fileSize: 2391068, width: 1440, height: 810 },
   },
   {
     linkClass: "lightbox-link-slide-5",
-    src: "/images/Georges-Website-5.png",
+    src: "/images/Georges-Website-5.webp",
     srcSet:
-      "/images/Georges-Website-5-p-500.png 500w, /images/Georges-Website-5-p-800.png 800w, /images/Georges-Website-5-p-1080.png 1080w, /images/Georges-Website-5-p-1600.png 1600w, /images/Georges-Website-5.png 1708w",
+      "/images/Georges-Website-5-p-500.png 500w, /images/Georges-Website-5-p-800.webp 800w, /images/Georges-Website-5-p-1080.webp 1080w, /images/Georges-Website-5-p-1600.webp 1600w, /images/Georges-Website-5.webp 1708w",
     sizes: "100vw",
-    lightbox: { _id: "672ca1fd3a73d79af28d8f00", fileName: "Georges-Website-5.png", fileSize: 3947975, width: 1708, height: 1003 },
+    lightbox: { _id: "672ca1fd3a73d79af28d8f00", fileName: "Georges-Website-5.webp", fileSize: 3947975, width: 1708, height: 1003 },
   },
 ];
 

@@ -64,10 +64,10 @@ export default function Contacts() {
             className="contacts-right-column"
           >
             <img
-              src="/images/51.png"
+              src="/images/51.webp"
               loading="lazy"
               sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px, 100vw"
-              srcSet="/images/51-p-500.png 500w, /images/51-p-800.png 800w, /images/51.png 1080w"
+              srcSet="/images/51-p-500.webp 500w, /images/51-p-800.webp 800w, /images/51.webp 1080w"
               alt=""
               className="image-contacts"
             />

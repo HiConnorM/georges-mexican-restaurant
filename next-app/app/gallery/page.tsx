@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "Specials & Events | George's Mexican Restaurant | Mandeville, LA",
     description: "See what&#x27;s happening at George&#x27;s Mexican Restaurant in Mandeville, LA \u2014 weekly specials, live music, happy hour, margarita nights, and community events.",
     type: "website",
-    images: ["https://georgesmexicanrestaurant.com/images/OSWALD.png"],
+    images: ["https://georgesmexicanrestaurant.com/images/OSWALD.webp"],
   },
   twitter: {
     card: "summary_large_image",
@@ -96,11 +96,11 @@ export default function Page() {
                         </div>
                       </div>
                     </div>
-                    <div id="w-node-deada979-f161-d7fd-2957-dcc6762381a9-4d011576" className="w-layout-blockcontainer div-block-100 w-container"><img src="/images/55.png" loading="lazy" width="572" height="Auto" alt="" srcSet="/images/55-p-500.png 500w, /images/55-p-800.png 800w, /images/55.png 1080w" sizes="(max-width: 767px) 100vw, 572px" className="image-52" /></div>
+                    <div id="w-node-deada979-f161-d7fd-2957-dcc6762381a9-4d011576" className="w-layout-blockcontainer div-block-100 w-container"><img src="/images/55.webp" loading="lazy" width="572" height="Auto" alt="" srcSet="/images/55-p-500.webp 500w, /images/55-p-800.webp 800w, /images/55.webp 1080w" sizes="(max-width: 767px) 100vw, 572px" className="image-52" /></div>
                   </div>
                 </div>
               </section>
-              <div data-w-id="76f53b3d-c773-f308-b6f2-9968c1791a85" style={{ opacity: "0" }} className="contacts-right-column"><img src="/images/50.png" loading="lazy" alt="" className="image-contacts" /></div>
+              <div data-w-id="76f53b3d-c773-f308-b6f2-9968c1791a85" style={{ opacity: "0" }} className="contacts-right-column"><img src="/images/50.webp" loading="lazy" alt="" className="image-contacts" /></div>
             </div>
           </div>
         </section>

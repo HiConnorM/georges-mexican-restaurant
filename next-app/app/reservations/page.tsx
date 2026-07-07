@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "Reservations | George's Mexican Restaurant | Mandeville, LA",
     description: "Reserve a table at George&#x27;s Mexican Restaurant in Mandeville, LA. Authentic Mexican and Honduran cuisine, margaritas, live music, and weekly specials.",
     type: "website",
-    images: ["https://georgesmexicanrestaurant.com/images/OSWALD.png"],
+    images: ["https://georgesmexicanrestaurant.com/images/OSWALD.webp"],
   },
   twitter: {
     card: "summary_large_image",
@@ -36,7 +36,7 @@ export default function Page() {
           <section></section>
           <div className="w-layout-blockcontainer base-container w-container">
             <div className="reservation-section-wrapper">
-              <div id="w-node-_6c794274-06f8-debc-5968-11afaa080f98-74464576" data-w-id="6c794274-06f8-debc-5968-11afaa080f98" style={{ opacity: "0" }} className="reservation-image-wrapper"><img sizes="240px" srcSet="/images/55-p-500.png 500w, /images/55-p-800.png 800w, /images/55.png 1080w" alt="" src="/images/55.png" loading="lazy" className="image-reservation" /></div>
+              <div id="w-node-_6c794274-06f8-debc-5968-11afaa080f98-74464576" data-w-id="6c794274-06f8-debc-5968-11afaa080f98" style={{ opacity: "0" }} className="reservation-image-wrapper"><img sizes="240px" srcSet="/images/55-p-500.webp 500w, /images/55-p-800.webp 800w, /images/55.webp 1080w" alt="" src="/images/55.webp" loading="lazy" className="image-reservation" /></div>
               <div id="w-node-_6c794274-06f8-debc-5968-11afaa080f9a-74464576" data-w-id="6c794274-06f8-debc-5968-11afaa080f9a" style={{ opacity: "0" }} className="form-reservation-wrapper">
                 <div>
                   <div>
@@ -94,7 +94,7 @@ export default function Page() {
                   </a>
                 </div>
               </div>
-              <div data-w-id="f2beb868-289e-2965-5278-30f592ddf20b" style={{ opacity: "0" }} className="contacts-right-column"><img src="/images/51.png" loading="lazy" sizes="240px" srcSet="/images/51-p-500.png 500w, /images/51-p-800.png 800w, /images/51.png 1080w" alt="" className="image-contacts" /></div>
+              <div data-w-id="f2beb868-289e-2965-5278-30f592ddf20b" style={{ opacity: "0" }} className="contacts-right-column"><img src="/images/51.webp" loading="lazy" sizes="240px" srcSet="/images/51-p-500.webp 500w, /images/51-p-800.webp 800w, /images/51.webp 1080w" alt="" className="image-contacts" /></div>
             </div>
           </div>
         </section>

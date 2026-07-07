@@ -46,7 +46,7 @@ const restaurantSchema = {
   "@type": "Restaurant",
   name: "George's Mexican Restaurant",
   url: "https://georgesmexicanrestaurant.com/",
-  image: "https://georgesmexicanrestaurant.com/images/OSWALD.png",
+  image: "https://georgesmexicanrestaurant.com/images/OSWALD.webp",
   servesCuisine: ["Mexican", "Honduran"],
   telephone: "+19856264342",
   priceRange: "$$",

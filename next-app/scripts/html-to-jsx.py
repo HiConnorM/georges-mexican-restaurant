@@ -162,14 +162,17 @@ def main():
     # Drop the Webflow runtime <script src> tags (loaded by WebflowRuntime)
     body = re.sub(r'\s*<script src="[^"]*"[^>]*></script>', "", body)
 
-    # Swap the exported navbar for the shared component
-    nav_start = body.index('<div data-animation="default" class="navbar w-nav"')
-    nav_end = balanced_div(body, nav_start)
-    body = body[:nav_start] + "@@NAVBAR@@" + body[nav_end:]
+    # Swap the exported navbar for the shared component (if the page has one)
+    has_navbar = '<div data-animation="default" class="navbar w-nav"' in body
+    if has_navbar:
+        nav_start = body.index('<div data-animation="default" class="navbar w-nav"')
+        nav_end = balanced_div(body, nav_start)
+        body = body[:nav_start] + "@@NAVBAR@@" + body[nav_end:]
 
     placeholders = []
     jsx = convert(body, placeholders)
-    jsx = jsx.replace("@@NAVBAR@@", f'<Navbar currentPath="{route}" />')
+    if has_navbar:
+        jsx = jsx.replace("@@NAVBAR@@", f'<Navbar currentPath="{route}" />')
     jsx = "\n".join("      " + line for line in jsx.strip().splitlines())
 
     esc_title = title.replace("&#x27;", "'").replace("&amp;", "&")
@@ -199,9 +202,11 @@ def main():
         style_decl = f"\nconst interactionStyles = {json.dumps(head_style)};\n"
         style_block = '\n      <style dangerouslySetInnerHTML={{ __html: interactionStyles }} />'
 
+    depth = len([p for p in route.strip("/").split("/") if p])
+    rel = "../" * (depth + 1)
     out = f"""import type {{ Metadata }} from "next";
-import Navbar from "../../components/Navbar";
-import WfPageId from "../../components/WfPageId";
+import Navbar from "{rel}components/Navbar";
+import WfPageId from "{rel}components/WfPageId";
 
 export const metadata: Metadata = {{
 {metadata}

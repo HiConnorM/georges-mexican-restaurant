@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "Catering | George's Mexican Restaurant | Mandeville, LA",
     description: "Let George&#x27;s Mexican Restaurant cater your next party, office lunch, or celebration in Mandeville, LA \u2014 authentic Mexican and Honduran favorites, appetizers, and party platters.",
     type: "website",
-    images: ["https://georgesmexicanrestaurant.com/images/OSWALD.png"],
+    images: ["https://georgesmexicanrestaurant.com/images/OSWALD.webp"],
   },
   twitter: {
     card: "summary_large_image",
@@ -652,7 +652,7 @@ export default function Page() {
         <section id="Book-a-table" className="section without-bottom-spacing">
           <div className="w-layout-blockcontainer base-container w-container">
             <div className="reservation-section-wrapper">
-              <div id="w-node-_6c794274-06f8-debc-5968-11afaa080f98-9d661ba9" data-w-id="6c794274-06f8-debc-5968-11afaa080f98" style={{ opacity: "0" }} className="reservation-image-wrapper"><img sizes="(max-width: 767px) 100vw, (max-width: 991px) 727.984375px, 939.984375px" srcSet="/images/12th-p-500.png 500w, /images/12th-p-800.png 800w, /images/12th.png 1080w" alt="" src="/images/12th.png" loading="lazy" className="image-reservation" /></div>
+              <div id="w-node-_6c794274-06f8-debc-5968-11afaa080f98-9d661ba9" data-w-id="6c794274-06f8-debc-5968-11afaa080f98" style={{ opacity: "0" }} className="reservation-image-wrapper"><img sizes="(max-width: 767px) 100vw, (max-width: 991px) 727.984375px, 939.984375px" srcSet="/images/12th-p-500.png 500w, /images/12th-p-800.webp 800w, /images/12th.webp 1080w" alt="" src="/images/12th.webp" loading="lazy" className="image-reservation" /></div>
               <div id="w-node-_6c794274-06f8-debc-5968-11afaa080f9a-9d661ba9" data-w-id="6c794274-06f8-debc-5968-11afaa080f9a" style={{ opacity: "0" }} className="form-reservation-wrapper">
                 <div>
                   <div>
@@ -737,7 +737,7 @@ export default function Page() {
                   </a>
                 </div>
               </div>
-              <div data-w-id="f2beb868-289e-2965-5278-30f592ddf20b" style={{ opacity: "0" }} className="contacts-right-column"><img src="/images/51.png" loading="lazy" sizes="240px" srcSet="/images/51-p-500.png 500w, /images/51-p-800.png 800w, /images/51.png 1080w" alt="" className="image-contacts" /></div>
+              <div data-w-id="f2beb868-289e-2965-5278-30f592ddf20b" style={{ opacity: "0" }} className="contacts-right-column"><img src="/images/51.webp" loading="lazy" sizes="240px" srcSet="/images/51-p-500.webp 500w, /images/51-p-800.webp 800w, /images/51.webp 1080w" alt="" className="image-contacts" /></div>
             </div>
           </div>
         </section>

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "Menu | George's Mexican Restaurant | Mandeville, LA",
     description: "Explore the menu at George&#x27;s Mexican Restaurant in Mandeville, LA \u2014 authentic Mexican and Honduran dishes, fresh tacos, fajitas, margaritas, and weekly specials. Order online for pickup.",
     type: "website",
-    images: ["https://georgesmexicanrestaurant.com/images/OSWALD.png"],
+    images: ["https://georgesmexicanrestaurant.com/images/OSWALD.webp"],
   },
   twitter: {
     card: "summary_large_image",
@@ -1247,7 +1247,7 @@ export default function Page() {
                   </a>
                 </div>
               </div>
-              <div data-w-id="f2beb868-289e-2965-5278-30f592ddf20b" style={{ opacity: "0" }} className="contacts-right-column"><img src="/images/51.png" loading="lazy" alt="" className="image-contacts" /></div>
+              <div data-w-id="f2beb868-289e-2965-5278-30f592ddf20b" style={{ opacity: "0" }} className="contacts-right-column"><img src="/images/51.webp" loading="lazy" alt="" className="image-contacts" /></div>
             </div>
           </div>
         </section>

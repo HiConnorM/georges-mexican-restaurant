@@ -6,20 +6,20 @@ export default function AboutUs() {
           <div data-w-id="d4e0694c-1f60-ec4a-deef-2393ee078bff" className="about-us-image-wrapper">
             <div data-w-id="97b2d4da-5132-291c-5bf4-511ca30868c1" className="small-image-wrapper">
               <img
-                src="/images/June-2025-2.png"
+                src="/images/June-2025-2.webp"
                 loading="lazy"
                 sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px"
-                srcSet="/images/June-2025-2-p-500.png 500w, /images/June-2025-2-p-800.png 800w, /images/June-2025-2.png 1080w"
+                srcSet="/images/June-2025-2-p-500.webp 500w, /images/June-2025-2-p-800.webp 800w, /images/June-2025-2.webp 1080w"
                 alt=""
                 className="image-about-us"
               />
             </div>
             <div data-w-id="65ef9da1-204f-1157-41b2-0c4b08fad4e1" className="big-image-wrapper">
               <img
-                src="/images/June-2025-1.png"
+                src="/images/June-2025-1.webp"
                 loading="lazy"
                 sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px"
-                srcSet="/images/June-2025-1-p-500.png 500w, /images/June-2025-1-p-800.png 800w, /images/June-2025-1.png 1080w"
+                srcSet="/images/June-2025-1-p-500.webp 500w, /images/June-2025-1-p-800.webp 800w, /images/June-2025-1.webp 1080w"
                 alt=""
                 className="image-about-us"
               />
@@ -47,20 +47,20 @@ export default function AboutUs() {
           <div data-w-id="2e764593-f30c-0121-4102-602f2dfee25e" className="about-us-image-wrapper">
             <div data-w-id="2e764593-f30c-0121-4102-602f2dfee261" className="big-image-wrapper">
               <img
-                src="/images/10-OCTOBER-2025-4.png"
+                src="/images/10-OCTOBER-2025-4.webp"
                 loading="lazy"
                 sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px"
-                srcSet="/images/10-OCTOBER-2025-4-p-500.png 500w, /images/10-OCTOBER-2025-4-p-800.png 800w, /images/10-OCTOBER-2025-4.png 1080w"
+                srcSet="/images/10-OCTOBER-2025-4-p-500.png 500w, /images/10-OCTOBER-2025-4-p-800.webp 800w, /images/10-OCTOBER-2025-4.webp 1080w"
                 alt=""
                 className="image-about-us"
               />
             </div>
             <div data-w-id="2e764593-f30c-0121-4102-602f2dfee25f" className="small-image-wrapper">
               <img
-                src="/images/58.png"
+                src="/images/58.webp"
                 loading="lazy"
                 sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px"
-                srcSet="/images/58-p-500.png 500w, /images/58-p-800.png 800w, /images/58.png 1080w"
+                srcSet="/images/58-p-500.png 500w, /images/58-p-800.webp 800w, /images/58.webp 1080w"
                 alt=""
                 className="image-about-us"
               />
